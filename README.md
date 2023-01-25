@@ -10,9 +10,21 @@ Recently, GPTZero got a lot of hype/traction from media to be able to determine 
 ```pip install -r requirements.txt```
 
 ## Usage
-```python3 local_infer.py```
+### Using Python function
+```python3 infer.py```
+#### example
+```
+from model import GPT2PPL
 
-### example
+model = GPT2PPL()
+
+sentence = "your text here"
+
+model(sentence)
+```  
+### Using Python input
+```python3 local_infer.py```
+#### example
 ```
 Please enter your sentence: (Press Enter twice to start processing)
 Hello World.
