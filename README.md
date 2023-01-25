@@ -7,18 +7,18 @@ GPTZero is an AI model with some mathematical hacks to determine if a piece of s
 Recently, GPTZero got a lot of hype/traction from media to be able to determine whether a set of sentences are generated from ChatGPT. But since the implementation is closed-source, we tried to replicate what they are doing by open-sourcing the model and the weights.
 
 ## Installation
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ## Usage
-python3 local_infer.py
+```python3 local_infer.py```
 
 ### example
-'''
+```
 Please enter your sentence: (Press Enter twice to start processing)
 Hello World.
 My name is mike.
 (empty line)
-'''
+```
 
 ## Acknowledgement
 1. This repository is built based on the hugging face
