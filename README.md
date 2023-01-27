@@ -1,10 +1,10 @@
 # GPTZero
 
-GPTZero is an AI model with some mathematical hacks to determine if a piece of sentence fed to it is written by ChatGPT or a human being.
+GPTZero is an AI model with some mathematical formulation to determine if a particular text fed to it is written by AI or a human being.
 
 ## The motivation for it
 
-Recently, GPTZero got a lot of hype/traction from media to be able to determine whether a set of sentences are generated from ChatGPT. But since the implementation is closed-source, we tried to replicate what they are doing by reverse-engineering their implementation <a href="https://gptzero.me">gptzero.me</a>. Our implementation gets the exact same results as them lol. 
+Recently, GPTZero gotten a lot of hype/traction from media to be able to determine whether a set of sentences are generated from ChatGPT. It was indeed a great initative for Education Institutes. However, the implementation is closed-source. We tried to construct identical solutioning and voila!! :tada: our implementation gets the exact same results. lol. :laughing:
 
 ## Installation
 ```pip install -r requirements.txt```
@@ -30,7 +30,7 @@ My name is mike.
 ```
 
 ## Note
-Our implementation produces 100% same results as <a href="https://gptzero.me">gptzero.me</a>. We've compared extensively on a large corpus of text to compare our values with them, and surprinsingly got the same results.
+Our implementation produces 100% same results as <a href="https://gptzero.me">gptzero.me</a>. We've compared extensively on a large corpus of text to compare our values with them, and surprisingly got the same results.
 
 ## Acknowledgement
 1. This repository is built based on the hugging face
