@@ -14,7 +14,7 @@ from fastapi import Request
 import gradio as gr
 import uvicorn
 from database import DB
-from HTML_MD_Components import noticeBoardMarkDown, footerHTML, bannerHTML, emailHTML, googleAnalytics
+from HTML_MD_Components import noticeBoardMarkDown, bannerHTML, emailHTML, googleAnalytics, discordHTML
 
 CUSTOM_PATH = "/"
 
@@ -38,11 +38,16 @@ def infer(sentence: str):
 
 
 with gr.Blocks(title="SG-GPTZero", css="#submit {background-color: #FF8C00} #advertisment {text-align: center;} #email {height:120%; background-color: LightSeaGreen} #blank {margin:150px} #code_feedback { margin-left:-0.3em;color:gray;text-align: center;margin-bottom:-100%;padding-bottom:-100%}") as io:
-    gr.HTML(bannerHTML, visible=True)
+    gr.HTML(googleAnalytics, visible=False)
     with gr.Row():
-        gr.HTML(googleAnalytics, visible=True)
+         gr.HTML(bannerHTML, visible=True)
     with gr.Row():
-        gr.Markdown('<h1 style="text-align: center;">SG-GPTZero</h1>')
+        with gr.Column(scale=0.1):
+            pass
+        with gr.Column(scale=0.8):
+            gr.Markdown('<h1 style="text-align: center;">SG-GPTZero <a style="text-decoration:none" href="https://github.com/BurhanUlTayyab/GPTZero">(Code)</a></h1>')
+        with gr.Column(scale=0.1):
+            gr.HTML(discordHTML, visible=True)
     with gr.Row():
         gr.Markdown("Use SG-GPTZero to determine if the text is written by AI or Human.")
     with gr.Row(elem_id="row1"):
@@ -63,10 +68,11 @@ with gr.Blocks(title="SG-GPTZero", css="#submit {background-color: #FF8C00} #adv
             emailTextBox = gr.HTML(emailHTML)
         with gr.Column(scale=0.5):
             pass
+ 
     with gr.Row():
-        gr.Markdown('<span style="color:red">Do you want to train Computer vision models faster. Visit [Ailiverse](https://ailiverse.com)</span> <br> <span style="color:gray"><p>Powered by Ailiverse </p></span>', elem_id="advertisment")
+        gr.Markdown('<span style="color:red">Do you want to train Computer vision models faster and with less data?. Visit [Ailiverse](https://ailiverse.com)</span> <br> <span style="color:gray"><p>Powered by Ailiverse </p></span>', elem_id="advertisment")
     with gr.Row():
-        gr.Markdown('<a style="text-decoration:none;color:gray" href="https://github.com/BurhanUlTayyab/GPTZero">Code</a> . <a style="text-decoration:none;color:gray" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=gptzero@ailiverse.com" target="_blank">Feedback</a>', elem_id="code_feedback")
+        gr.Markdown('For <a style="text-decoration:none;color:gray" href="mailto:gptzero@ailiverse.com" target="_blank">feedback</a>, contact us at gptzero@ailiverse.com', elem_id="code_feedback")
 
 app = gr.mount_gradio_app(app, io, path=CUSTOM_PATH)
 
