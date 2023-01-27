@@ -46,6 +46,7 @@ class GPT2PPL:
         """
         results = OrderedDict()
 
+
         lines = re.split('\.[ |\n]',sentence)
         lines = list(filter(lambda x: len(x) > 0, lines))
         ppl = self.getPPL(sentence)
@@ -57,7 +58,7 @@ class GPT2PPL:
             if i < len(lines)-1:
                 line = line + "."
             # remove the new line in the first sentence if exists
-            if lines[0] == "\n":
+            if line[0] == "\n":
                 line = line[1:]
             ppl = self.getPPL(line)
             Perplexity_per_line.append(ppl)
