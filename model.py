@@ -56,6 +56,9 @@ class GPT2PPL:
         for i, line in enumerate(lines):
             if i < len(lines)-1:
                 line = line + "."
+            # remove the new line in the first sentence if exists
+            if lines[0] == "\n":
+                line = line[1:]
             ppl = self.getPPL(line)
             Perplexity_per_line.append(ppl)
         print(f"Perplexity per line {sum(Perplexity_per_line)/len(Perplexity_per_line)}")
