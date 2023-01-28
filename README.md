@@ -6,6 +6,11 @@ GPTZero is an AI model with some mathematical formulation to determine if a part
 
 Recently, GPTZero gotten a lot of hype/traction from media to be able to determine whether a set of sentences are generated from ChatGPT. It was indeed a great initative for Education Institutes. However, the implementation is closed-source. We tried to construct identical solutioning and voila!! :tada: our implementation gets the exact same results. lol. :joy: :joy: :joy:
 
+## Implementation video
+[![GPTZero Implementation](https://i.imgur.com/6Xtakve.png)](https://www.youtube.com/watch?v=x9H-aY5sCDA)
+
+
+
 ## Installation
 ```pip install -r requirements.txt```
 
