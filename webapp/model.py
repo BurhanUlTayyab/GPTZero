@@ -46,20 +46,28 @@ class GPT2PPL:
         """
         results = OrderedDict()
 
+        total_valid_char = re.findall("[a-zA-Z0-9]+", sentence)
+        total_valid_char = sum([len(x) for x in total_valid_char]) # finds len of all the valid characters a sentence
 
-        lines = re.split('\.[ |\n]',sentence)
+        if total_valid_char < 100:
+            return {"status": "Please input more text (min 100 characters)"}, "Please input more text (min 100 characters)"
+        
+        lines = re.split(r'(?<=[.?!] )|(?<=\n)\s*',sentence)
         lines = list(filter(lambda x: len(x) > 0, lines))
+
         ppl = self.getPPL(sentence)
         print(f"Perplexity {ppl}")
         results["Perplexity"] = ppl
 
         Perplexity_per_line = []
         for i, line in enumerate(lines):
-            if i < len(lines)-1:
-                line = line + "."
+            if re.search("[a-zA-Z0-9]+", line) == None:
+                continue
             # remove the new line in the first sentence if exists
             if line[0] == "\n":
                 line = line[1:]
+            if line[-1] == "\n" or line[-1] == " ":
+                line = line[:-1]
             ppl = self.getPPL(line)
             Perplexity_per_line.append(ppl)
         print(f"Perplexity per line {sum(Perplexity_per_line)/len(Perplexity_per_line)}")

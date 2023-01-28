@@ -14,7 +14,7 @@ from fastapi import Request
 import gradio as gr
 import uvicorn
 from database import DB
-from HTML_MD_Components import noticeBoardMarkDown, bannerHTML, emailHTML, googleAnalytics, discordHTML
+from HTML_MD_Components import noticeBoardMarkDown, bannerHTML, emailHTML, discordHTML
 
 CUSTOM_PATH = "/"
 
@@ -36,9 +36,7 @@ def inference(sentence: str):
 def infer(sentence: str):
     return model(sentence=sentence)
 
-
-with gr.Blocks(title="SG-GPTZero", css="#submit {background-color: #FF8C00} #advertisment {text-align: center;} #email {height:120%; background-color: LightSeaGreen} #blank {margin:150px} #code_feedback { margin-left:-0.3em;color:gray;text-align: center;margin-bottom:-100%;padding-bottom:-100%}") as io:
-    gr.HTML(googleAnalytics, visible=False)
+with gr.Blocks(title="SG-GPTZero", css="#discord {text-align: center} #submit {background-color: #FF8C00} #advertisment {text-align: center;} #email {height:120%; background-color: LightSeaGreen} #blank {margin:150px} #code_feedback { margin-left:-0.3em;color:gray;text-align: center;margin-bottom:-100%;padding-bottom:-100%}") as io:
     with gr.Row():
          gr.HTML(bannerHTML, visible=True)
     with gr.Row():
@@ -46,7 +44,7 @@ with gr.Blocks(title="SG-GPTZero", css="#submit {background-color: #FF8C00} #adv
             pass
         with gr.Column(scale=0.8):
             gr.Markdown('<h1 style="text-align: center;">SG-GPTZero <a style="text-decoration:none" href="https://github.com/BurhanUlTayyab/GPTZero">(Code)</a></h1>')
-        with gr.Column(scale=0.1):
+        with gr.Column(scale=0.1, elem_id="discord"):
             gr.HTML(discordHTML, visible=True)
     with gr.Row():
         gr.Markdown("Use SG-GPTZero to determine if the text is written by AI or Human.")

@@ -19,7 +19,7 @@ def discordHTML():
 
 def bannerHTML():
     return """
-<h4 style="text-align:center;border-radius: 25px;color:#FFFFFF;font-size:1.5em;padding:10px;background-image: linear-gradient(90deg, #20B2AA, #FFEBCD);border-style : solid; border-color : white; border-width: 1px">SG-GPTZero is now at a beta version. Please give us feedback for further improvement.</h4>
+<h4 style="text-align:center;border-radius: 25px;color:#FFFFFF;font-size:1.5em;padding:10px;background-image: linear-gradient(90deg, #20B2AA, #FFEBCD);border-style : solid; border-color : white; border-width: 1px">SG-GPTZero is now at beta version. Please give us feedback for further improvement.</h4>
     """
     
 def emailHTML():
@@ -28,17 +28,4 @@ def emailHTML():
         <input data-testid="textbox" name="email" type="email" class="scroll-hide block gr-box gr-input w-full gr-text-input" placeholder="Enter your email" autocomplete="email">
         <button class="gr-button gr-button-lg gr-button-secondary"  type="submit" form="formPost" id="email" style="margin-top:10px;">Send</button>
     </form>
-    """
-
-def googleAnalytics():
-    return """
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-94REYHLBJM"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-94REYHLBJM');
-        </script>
     """
