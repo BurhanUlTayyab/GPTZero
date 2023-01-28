@@ -14,7 +14,7 @@ from fastapi import Request
 import gradio as gr
 import uvicorn
 from database import DB
-from HTML_MD_Components import noticeBoardMarkDown, bannerHTML, emailHTML, googleAnalytics, discordHTML
+from HTML_MD_Components import noticeBoardMarkDown, bannerHTML, emailHTML, discordHTML
 
 CUSTOM_PATH = "/"
 
