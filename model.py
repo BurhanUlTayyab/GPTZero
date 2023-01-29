@@ -52,21 +52,28 @@ class GPT2PPL:
         if total_valid_char < 100:
             return {"status": "Please input more text (min 100 characters)"}, "Please input more text (min 100 characters)"
         
-        lines = re.split(r'(?<=[.?!] )|(?<=\n)\s*',sentence)
-        lines = list(filter(lambda x: len(x) > 0, lines))
+        lines = re.split(r'(?<=[.?!][ \[\(])|(?<=\n)\s*',sentence)
+        lines = list(filter(lambda x: (x is not None) and (len(x) > 0), lines))
 
         ppl = self.getPPL(sentence)
         print(f"Perplexity {ppl}")
         results["Perplexity"] = ppl
 
+        offset = ""
         Perplexity_per_line = []
         for i, line in enumerate(lines):
             if re.search("[a-zA-Z0-9]+", line) == None:
                 continue
-            # remove the new line in the first sentence if exists
-            if line[0] == "\n":
+            if len(offset) > 0:
+                line = offset + line
+                offset = ""
+            # remove the new line pr space in the first sentence if exists
+            if line[0] == "\n" or line[0] == " ":
                 line = line[1:]
             if line[-1] == "\n" or line[-1] == " ":
+                line = line[:-1]
+            elif line[-1] == "[" or line[-1] == "(":
+                offset = line[-1]
                 line = line[:-1]
             ppl = self.getPPL(line)
             Perplexity_per_line.append(ppl)
