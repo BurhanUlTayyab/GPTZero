@@ -1,8 +1,8 @@
+# Implementation of DetectGPT in Pytorch could be found here: https://github.com/BurhanUlTayyab/DetectGPT
+
 # GPTZero
 
 GPTZero is an AI model with some mathematical formulation to determine if a particular text fed to it is written by AI or a human being.
-
-# Implementation of DetectGPT in Pytorch could be found here: https://github.com/BurhanUlTayyab/DetectGPT
 
 ## The motivation for it
 
