@@ -2,6 +2,8 @@
 
 GPTZero is an AI model with some mathematical formulation to determine if a particular text fed to it is written by AI or a human being.
 
+There is a new updated version 1.1 which includes detectgpt. you can find the code here: https://github.com/BurhanUlTayyab/DetectGPT.
+
 ## The motivation for it
 
 Recently, GPTZero gotten a lot of hype/traction from media to be able to determine whether a set of sentences are generated from ChatGPT. It was indeed a great initative for Education Institutes. However, the implementation is closed-source. We tried to construct identical solutioning and voila!! :tada: our implementation gets the exact same results mostly lol. :joy: :joy: :joy:
