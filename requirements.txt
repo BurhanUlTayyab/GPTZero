@@ -2,3 +2,8 @@ fastapi==0.89.1
 gradio==3.16.2
 transformers==4.26.0
 uvicorn==0.20.0
+black
+pylint
+pytest
+pytest-cov
+click
