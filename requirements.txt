@@ -7,4 +7,4 @@ pylint
 pytest
 pytest-cov
 click
-torch
+torch-cpu
