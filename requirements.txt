@@ -7,4 +7,4 @@ pylint
 pytest
 pytest-cov
 click
-torch-cpu
+torch==1.9.0
