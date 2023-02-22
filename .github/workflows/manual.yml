@@ -1,0 +1,24 @@
+name: workflow for detection of automated generated text
+on:
+  push:
+    branches: [ Developer-1, Developer-2]
+  pull_request:
+    types: [closed]
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8.16
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8.16
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Lint
+      run: |
+        make lint
+    - name: Test
+      run: |
+        make test
