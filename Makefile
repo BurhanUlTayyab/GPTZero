@@ -3,4 +3,4 @@ install:
 format: 
 	black *.py
 lint:
-	pylint --disable=R,C infer.py local_infer.py.py
+	pylint --disable=R,C infer.py local_infer.py
