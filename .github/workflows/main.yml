@@ -1,6 +1,6 @@
 name: MLOps Assignment 1
 on: 
-  push:
+  pull_request:
     branches: [ main ]
 jobs:
   build:
@@ -14,3 +14,10 @@ jobs:
     - name: Install dependencies
       run: |
         make install
+    - name: Format
+      run: |
+        make format
+    - name: Lint
+      run: |
+        make lint
+        
