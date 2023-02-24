@@ -1,3 +1,5 @@
+[![Python application test with Github Actions](https://github.com/NUCES-ISB/i190476_i190695_MLOps_Assignment-01/actions/workflows/main.yml/badge.svg?event=push)](https://github.com/NUCES-ISB/i190476_i190695_MLOps_Assignment-01/actions/workflows/main.yml)
+
 # Implementation of DetectGPT in Pytorch could be found here: https://github.com/BurhanUlTayyab/DetectGPT
 
 # GPTZero
