@@ -1,7 +1,7 @@
 name: MLOps Assignment 1
 on: 
   push:
-    branches: [ main ]
+    branches: [ i190476 ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,3 +14,9 @@ jobs:
     - name: Install dependencies
       run: |
         make install
+    - name: Format
+      run: |
+        make format
+    - name: Lint
+      run: |
+        make lint
