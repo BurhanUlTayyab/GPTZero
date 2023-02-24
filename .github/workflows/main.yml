@@ -19,4 +19,4 @@ jobs:
         make format
     - name: Lint
       run: |
-        make lint --generate-members
+        make lint
