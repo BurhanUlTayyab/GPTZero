@@ -1,0 +1,22 @@
+name: MLOps Assignment 1
+on: 
+  push:
+    branches: [ i190476 ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8.16
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8.16
+    - name: Install dependencies
+      run: |
+        make install
+    - name: Format
+      run: |
+        make format
+    - name: Lint
+      run: |
+        make lint
