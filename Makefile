@@ -3,4 +3,4 @@ install:
 format: 
 	black *.py
 lint:
-	pylint --disable=R,C --extension-pkg-whitelist=torch *.py
+	pylint --disable=R,C --generated-members exp stack *.py
