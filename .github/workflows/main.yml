@@ -1,7 +1,7 @@
 name: MLOps Assignment No. 1
 on: 
   push:
-    branches: [ main ]
+    branches: [ i190695 ]
 jobs:
   build:
     runs-on: ubuntu-latest
