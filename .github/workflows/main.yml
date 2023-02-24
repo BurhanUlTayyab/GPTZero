@@ -1,4 +1,4 @@
-name: MLOps Assignment 1
+name: MLOps Assignment One
 on: 
   push:
     branches: [ main ]
