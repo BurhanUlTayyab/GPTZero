@@ -1,4 +1,4 @@
-name: Python application test with Github Actions
+name: MLOps Assignment 1
 on: 
   push:
     branches: [ main ]
@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.10.9
+    - name: Set up Python 3.11.2
       uses: actions/setup-python@v1
       with:
-        python-version: 3.10.9
+        python-version: 3.11.2
     - name: Install dependencies
       run: |
         make install
